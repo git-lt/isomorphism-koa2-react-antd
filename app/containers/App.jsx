@@ -10,13 +10,6 @@ import 'antd/dist/antd.css'
 import '../common/layout.less'
 
 class App extends Component {
-  // static fetch (state, dispatch) {
-  //  const fetchTasks = []
-  //  fetchTasks.push(
-  //    dispatch(fetchServerStateIfNeeded(state))
-  //  )
-  //  return fetchTasks
-  // }
 
   render () {
     return (

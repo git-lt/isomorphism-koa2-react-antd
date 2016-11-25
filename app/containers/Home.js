@@ -3,13 +3,14 @@ import {connect} from 'react-redux'
 import { fetchServerStateIfNeeded } from '../actions/serverState'
 
 @connect(
-  state => state.server,
+  state => state.server
 )
 
 class Home extends Component{
   constructor(){
     super()
   }
+
   static fetch (state, dispatch) {
    const fetchTasks = []
    fetchTasks.push(
@@ -18,6 +19,8 @@ class Home extends Component{
    return fetchTasks
   }
 
+  // 前端在组件挂载后，要判断一下这个页面的状态数据，有没有初始化，如果没有，应该加载一次
+  // 避免在前端路由跳转后，新的页面没有数据而报错
   componentDidMount () {
     const { loaded } = this.props
     if ( !loaded ) {
