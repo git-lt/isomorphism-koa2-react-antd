@@ -14,8 +14,6 @@ export function fetchNews(state){
     return fetch(fetchStateUrl)
       .then(res => res.json())
       .then(data => {
-        console.log('===>news')
-        console.log(data)
         dispatch(newsSucceed(data))
       })
       .catch(e => dispatch(newsFailed(e)))

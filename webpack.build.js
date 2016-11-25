@@ -23,6 +23,7 @@ module.exports = [{
   name: 'browser side render',
   devtool: 'cheap-source-map',
   entry: ['./platforms/browser/index.js'],
+  // entry: ['./app/app.js'],
   output: {
     path: 'public/build',
     filename: '[name].js',

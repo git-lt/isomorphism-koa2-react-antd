@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {connect} from 'react-redux';
+import {connect} from 'react-redux'
+import { fetchServerStateIfNeeded } from '../actions/serverState'
 
 @connect(
   state => state.server,
@@ -8,6 +9,20 @@ import {connect} from 'react-redux';
 class Home extends Component{
   constructor(){
     super()
+  }
+  static fetch (state, dispatch) {
+   const fetchTasks = []
+   fetchTasks.push(
+     dispatch(fetchServerStateIfNeeded(state))
+   )
+   return fetchTasks
+  }
+
+  componentDidMount () {
+    const { loaded} = this.props
+    if ( !loaded ) {
+      this.constructor.fetch(this.props, this.props.dispatch)
+    }
   }
 
   render(){

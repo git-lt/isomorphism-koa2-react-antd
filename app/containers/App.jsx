@@ -11,14 +11,13 @@ import '../common/layout.less'
 
 class App extends Component {
   static fetch (state, dispatch) {
-    console.log(state);
    const fetchTasks = []
    fetchTasks.push(
      dispatch(fetchServerStateIfNeeded(state))
    )
    return fetchTasks
   }
-  
+
   render () {
     return (
       <div>
@@ -36,7 +35,7 @@ class App extends Component {
           </div>
           <div className="ant-layout-wrapper">
             <div className="ant-layout-container">
-              <div style={{ height: 900 }}>
+              <div style={{ minHeight: 900 }}>
                 {this.props.children }
               </div>
             </div>

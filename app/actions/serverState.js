@@ -17,8 +17,6 @@ function fetchServerState(){
     return fetch(fetchStateUrl)
       .then(res => res.json())
       .then(data => {
-        console.log('===>serverConfig')
-        console.log(data)
         dispatch(serverStateSucceed(data))
       })
       .catch(e => dispatch(serverStateFailed(e)))
@@ -27,9 +25,9 @@ function fetchServerState(){
 
 export function fetchServerStateIfNeeded (state) {
   return (dispatch) => {
-    if( state && state.server && state.server.loaded ) {
-      return dispatch(serverStateSucceed(state.server))
-    }
+    // if( state && state.server && state.server.loaded ) {
+      // return dispatch(serverStateSucceed(state.server))
+    // }
     return dispatch(fetchServerState())
   }
 }

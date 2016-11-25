@@ -14,8 +14,6 @@ const fetchStateUrl = __SERVER__
       return fetch(fetchStateUrl)
         .then(res => res.json())
         .then(data => {
-          console.log('===>about')
-          console.log(data)
           dispatch(newsSucceed(data))
         })
         .catch(e => dispatch(newsFailed(e)))

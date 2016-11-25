@@ -1,12 +1,25 @@
-import App from './containers/App'
-import Picture from './components/Picture'
-import Counter from './containers/Counter'
-import News from './containers/News'
-import About from './containers/About'
-import Home from './containers/Home'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import React from 'react'
 
+import App from './containers/App'
+import News from './containers/News'
+import About from './containers/About'
+import Home from './containers/Home'
+
+export default (
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home}/>
+      <Route path="news" component={News} />
+      <Route path="about" component={About} />
+    </Route>
+  </Router>
+)
+
+
+
+// import Picture from './components/Picture'
+// import Counter from './containers/Counter'
 // const rootRoute = {
 //     path: '/',
 //     component: App,
@@ -47,13 +60,3 @@ import React from 'react'
 
 // <Route path="picture" component={Picture} />
 // <Route path="counter" component={Counter} />
-
-export default ( 
-  <Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
-      <Route path="news" component={News} />
-      <Route path="about" component={About} />
-    </Route>
-  </Router>
-)

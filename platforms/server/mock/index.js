@@ -22,12 +22,12 @@ export function news(){
     code: 200,
     msg: 'ok',
     result: mock({
-      "count|80-120": 80,
-      "list|20": [{
+      "count": 128,
+      "list|10": [{
           "id|+1": 1,
-          "title": "@csentence",
-          "thumb": "@image('180x100')",
-          "summary": "@cparagraph(1, 3)",
+          "title": "@ctitle(8, 18)",
+          "thumb": "http://placeimg.com/100/100?"+"@natural()",
+          "summary": "@cparagraph(3, 7)",
           "gmtCreate": 1449139208000,
           "gmtUpdate": 1449139208000,
           "operator": 3,

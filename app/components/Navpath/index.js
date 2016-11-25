@@ -2,14 +2,8 @@ import React, {PropTypes} from 'react'
 import { bindActionCreators } from 'redux'
 import { Breadcrumb } from 'antd'
 import { connect } from 'react-redux'
-
-import Actions from '../../store/actions'
 import './index.less'
 
-@connect(
-  state => ({...state}),
-  dispatch => bindActionCreators( Actions, dispatch )
-)
 
 class NavPath extends React.Component {
   constructor (props) {
