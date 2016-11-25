@@ -10,7 +10,6 @@ import { fetchNews } from '../actions/news'
 
 class News extends Component{
   static fetch (state, dispatch) {
-    console.log(state);
    const fetchTasks = []
    fetchTasks.push(
      dispatch(fetchNews(state))
@@ -26,16 +25,15 @@ class News extends Component{
  }
 
  getNextPage(){
-   console.log(this.props)
    this.constructor.fetch(this.props, this.props.dispatch);
  }
 
   render(){
-    const { list, count, loaded } = this.props;
+    const { list=[], count=0, loaded } = this.props;
 
     const newsList = list.map((v, i)=>{
       return (
-        <div key={i}>
+        <div key={i} style={{overflow:"hidden"}}>
           <img src={v.thumb} width="80" className="news-con-img" />
           <div className="news-con-txt">
             <h3 className="news-con-tit">{v.title}</h3>

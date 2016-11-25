@@ -19,21 +19,23 @@ class Home extends Component{
   }
 
   componentDidMount () {
-    const { loaded} = this.props
+    const { loaded } = this.props
     if ( !loaded ) {
       this.constructor.fetch(this.props, this.props.dispatch)
     }
   }
 
   render(){
+    const {id="", username="", mobile="", email="", county="" } = this.props.serverConfig || {};
+
     return (
       <div>
         <h3>首页</h3>
-        <div>ID：{this.props.serverConfig.id}</div>
-        <div>名称：{this.props.serverConfig.username}</div>
-        <div>手机：{this.props.serverConfig.mobile}</div>
-        <div>邮箱：{this.props.serverConfig.email}</div>
-        <div>居住地：{this.props.serverConfig.county}</div>
+        <div>ID：{id}</div>
+        <div>名称：{username}</div>
+        <div>手机：{mobile}</div>
+        <div>邮箱：{email}</div>
+        <div>居住地：{county}</div>
       </div>
     )
   }

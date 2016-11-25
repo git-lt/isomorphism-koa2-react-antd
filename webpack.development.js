@@ -15,8 +15,8 @@ module.exports = {
     // For old browsers
     'eventsource-polyfill',
     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    './platforms/browser/index.js'
     // './platforms/browser/index.js'
+    './app/app.js'
   ],
   output: {
     path: path.join(__dirname, '/public/static'),
