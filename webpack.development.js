@@ -11,6 +11,7 @@ var includes = [
 
 module.exports = {
   name: 'backend dev hot middlware',
+  devtool: 'cheap-module-eval-source-map',
   entry: [
     // For old browsers
     'eventsource-polyfill',
